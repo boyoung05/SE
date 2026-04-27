@@ -16,3 +16,7 @@ second commit
 
 - **참고 사항**: md파일로 WBS의 주차별 칸 채우기는 적용이 되지 않는 것 같습니다. 번거로우시겠지만 pdf를 참고해주시면 감사하겠습니다.
 
+
+## 9주차 과제 (요구사항 정의서 작성)
+- **파일 위치**:
+`SE/docs/project_requirement_definition.md`
