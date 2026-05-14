@@ -114,7 +114,7 @@
 | 알림 시스템 | 보호자/아동에게 미션, 사용 시간, 리포트 등의 알림을 제공하는 시스템을 말한다. |
 
 ### **2.1.2 UseCase Diagram**
-![웰폰키즈 UseCase Diagram](images/usecase.png)
+![웰폰키즈 UseCase Diagram](../images/usecase.png)
 
 
 사진이 선명하지 않아 원본 링크를 함께 첨부합니다. [요구사항 분석서 다이어그램 모음](https://www.figma.com/board/ahhwIDRuI7a2NRphMgD7HR/%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B3%B5%ED%95%99-%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD-%EB%B6%84%EC%84%9D%EC%84%9C?node-id=0-1&t=Ulxaw51oHgBKYU6L-1)
@@ -260,7 +260,7 @@
 # **3\. 요구사항 명세**
 
 ## **3.1 정적 분석**
-![웰폰키즈 class Diagram](images/classDiagram.png)
+![웰폰키즈 Class Diagram](../images/classDiagram.png)
 
 사진이 선명하지 않아 원본 링크를 함께 첨부합니다. [요구사항 분석서 다이어그램 모음](https://www.figma.com/board/ahhwIDRuI7a2NRphMgD7HR/%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B3%B5%ED%95%99-%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD-%EB%B6%84%EC%84%9D%EC%84%9C?node-id=0-1&t=Ulxaw51oHgBKYU6L-1)
 
@@ -364,32 +364,32 @@
 
 ## **3.3 동적 분석**
 
-3.3.1 회원가입을 한다  
-![웰폰키즈 sequence Diagram](images/signup.png)
+3.3.1 회원가입을 한다
+![웰폰키즈 Sequence Diagram](../images/signup.png)  
 
 3.3.2 로그인을 한다  
-![웰폰키즈 sequence Diagram](images/login.png)
+![웰폰키즈 Sequence Diagram](../images/login.png) 
 
 3.3.3 아동 계정을 등록한다  
-![웰폰키즈 sequence Diagram](images/kid-register.png)
+![웰폰키즈 Sequence Diagram](../images/kid-register.png) 
 
 3.3.4 사용 리포트를 조회한다  
-![웰폰키즈 sequence Diagram](images/report.png)
+![웰폰키즈 Sequence Diagram](../images/report.png) 
 
 3.3.5 사용 제한을 설정한다  
-![웰폰키즈 sequence Diagram](images/limit-register.png)
+![웰폰키즈 Sequence Diagram](../images/limit-register.png) 
 
 3.3.6 미션을 설정한다  
-![웰폰키즈 sequence Diagram](images/mission-register.png)
+![웰폰키즈 Sequence Diagram](../images/mission-register.png) 
 
 3.3.7 미션을 수행한다  
-![웰폰키즈 sequence Diagram](images/do-mission.png)
+![웰폰키즈 Sequence Diagram](../images/do-mission.png) 
 
 3.3.8 AI 코칭 결과를 조회한다  
-![웰폰키즈 sequence Diagram](images/AI.png)
+![웰폰키즈 Sequence Diagram](../images/AI.png) 
 
 3.3.9 알림을 확인한다  
-![웰폰키즈 sequence Diagram](images/alarm.png)
+![웰폰키즈 Sequence Diagram](../images/alarm.png) 
 
 사진이 선명하지 않아 원본 링크를 함께 첨부합니다. [요구사항 분석서 다이어그램 모음](https://www.figma.com/board/ahhwIDRuI7a2NRphMgD7HR/%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B3%B5%ED%95%99-%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD-%EB%B6%84%EC%84%9D%EC%84%9C?node-id=0-1&t=Ulxaw51oHgBKYU6L-1)
 
