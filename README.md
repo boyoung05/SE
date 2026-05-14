@@ -20,3 +20,7 @@ second commit
 ## 9주차 과제 (요구사항 정의서 작성)
 - **파일 위치**:
 `SE/docs/project_requirement_definition.md`
+
+## 11주차 과제 (요구사항 분석서 작성)
+- **파일 위치**:
+`SE/docs/project_analysis.md`
