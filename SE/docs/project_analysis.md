@@ -114,8 +114,8 @@
 | 알림 시스템 | 보호자/아동에게 미션, 사용 시간, 리포트 등의 알림을 제공하는 시스템을 말한다. |
 
 ### **2.1.2 UseCase Diagram**
+![웰폰키즈 UseCase Diagram](images/usecase.png)
 
-![][image1]
 
 사진이 선명하지 않아 원본 링크를 함께 첨부합니다. [요구사항 분석서 다이어그램 모음](https://www.figma.com/board/ahhwIDRuI7a2NRphMgD7HR/%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B3%B5%ED%95%99-%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD-%EB%B6%84%EC%84%9D%EC%84%9C?node-id=0-1&t=Ulxaw51oHgBKYU6L-1)
 
@@ -260,8 +260,7 @@
 # **3\. 요구사항 명세**
 
 ## **3.1 정적 분석**
-
-![][image2]
+![웰폰키즈 class Diagram](images/classDiagram.png)
 
 사진이 선명하지 않아 원본 링크를 함께 첨부합니다. [요구사항 분석서 다이어그램 모음](https://www.figma.com/board/ahhwIDRuI7a2NRphMgD7HR/%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B3%B5%ED%95%99-%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD-%EB%B6%84%EC%84%9D%EC%84%9C?node-id=0-1&t=Ulxaw51oHgBKYU6L-1)
 
@@ -269,28 +268,28 @@
 
 | Class Name: 보호자 | ID: 01 |  | Type: Concrete, Domain |
 | :---- | :---- | :---- | :---- |
-| **Description:** 서비스를 사용하는 사용자를 나타낸다. |  |  | **Associated Use Case:** U\_01, U\_02, U\_03, U\_04, U\_05, U\_06, U\_09, U\_10  |
+| **Description:** 서비스를 사용하는 사용자를 나타낸다. |  |  | **Associated Use Case:** U\_01, U\_02, U\_03, U\_04, U\_05, U\_06, U\_09, U\_10  |
 | **Responsibilities:**  \-회원가입() : void \-로그인() : bool \-아동등록() : void \-사용리포트조회() : 리포트 \-사용제한설정() : void \-미션설정(): void \- 알림확인() : void  |  | **Collaborations:** \-아동 \-사용기록 \-사용제한설정 \-미션 \-AI코칭 \-리포트 \-알림 |  |
 | **Attributes** \-보호자 ID : String \-이름 : String \-이메일: String \-비밀번호: String \-전화번호: String  |  |  |  |
 | **Relationships** \- Generalization:  \-Aggregation: 아동 \-Other Associations: 미션, 사용제한설정, 리포트, 알림 |  |  |  |
 
 | Class Name: 아동 | ID: 02 |  | Type: Concrete, Domain |
 | :---- | :---- | :---- | :---- |
-| **Description:** 서비스를 사용하는 사용자를 나타낸다. |  |  | **Associated Use Case:** U\_01, U\_02, U\_03, U\_04, U\_07, U\_09, U\_10  |
+| **Description:** 서비스를 사용하는 사용자를 나타낸다. |  |  | **Associated Use Case:** U\_01, U\_02, U\_03, U\_04, U\_07, U\_09, U\_10  |
 | **Responsibilities:**  \-회원가입() : void \-로그인() : bool \-미션확인() : List\<미션\> \-미션수행() : void \-AI 코칭 결과 조회() : AI 코칭 \- 알림확인() : void  |  | **Collaborations:** \-보호자 \-사용기록 \-사용제한설정 \-미션 \-미션수행기록 \-AI코칭 \-리포트 \-알림 |  |
 | **Attributes** \-아동 ID : String \-이름 : String \-나이: Int \-이메일: String \-비밀번호: String \-전화번호: String \-기기ID : String \-등록일: String  |  |  |  |
 | **Relationships** \-Generalization:  \-Aggregation: 사용기록, 미션수행기록 \-Other Associations: 보호자, 미션, 사용제한설정, AI코칭, 리포트, 알림 |  |  |  |
 
 | Class Name: 회원가입 | ID: 03 |  | Type: Concrete, Application |
 | :---- | :---- | :---- | :---- |
-| **Description:** 사용자가 서비스를 이용하기 위해 계정을 생성하는 과정을 나타낸다. |  |  | **Associated Use Case:** U\_01 |
+| **Description:** 사용자가 서비스를 이용하기 위해 계정을 생성하는 과정을 나타낸다. |  |  | **Associated Use Case:** U\_01 |
 | **Responsibilities:**  \-회원 중복 확인(): bool |  | **Collaborations:** \-보호자 \-아동 |  |
 | **Attributes** \-아이디: String \-비밀번호: String \-이메일: String  |  |  |  |
 | **Relationships** \-Generalization:  \-Aggregation:  \-Other Associations: 사용자 |  |  |  |
 
 | Class Name: 로그인 | ID: 04 |  | Type: Concrete, Application |
 | :---- | :---- | :---- | :---- |
-| **Description:** 사용자가 서비스를 이용하기 위해 접속하는 과정을 나타낸다. |  |  | **Associated Use Case:** U\_02 |
+| **Description:** 사용자가 서비스를 이용하기 위해 접속하는 과정을 나타낸다. |  |  | **Associated Use Case:** U\_02 |
 | **Responsibilities:**  \-로그인 정보 전송() : void \-로그인 정보 확인() : void |  | **Collaborations:** \-보호자 \-아동 |  |
 | **Attributes** \-아이디 : String \-비밀번호: String  |  |  |  |
 | **Relationships** \-Generalization:  \-Aggregation:  \-Other Associations: 사용자 |  |  |  |
@@ -301,56 +300,56 @@
 
 | Class Name: 사용기록 | ID: 05 |  | Type: Concrete, Domain |
 | :---- | :---- | :---- | :---- |
-| **Description:** 아동의 스마트폰 사용 시간과 앱별 사용 내역을 저장하는 정보를 나타낸다. |  |  | **Associated Use Case:** U\_04, U\_08, U\_09  |
+| **Description:** 아동의 스마트폰 사용 시간과 앱별 사용 내역을 저장하는 정보를 나타낸다. |  |  | **Associated Use Case:** U\_04, U\_08, U\_09  |
 | **Responsibilities:**  \-사용시간계산(): Int \-앱별사용정보조회() : List\<앱 사용정보\> \-기록저장() : void  |  | **Collaborations:** \-아동 \-앱사용정보 \-AI코칭 \-리포트 |  |
 | **Attributes** \-기록 ID : String \-날짜: String \-총 사용시간: Int \-수집시간: String  |  |  |  |
 | **Relationships** \-Generalization:  \-Aggregation: 앱사용정보 \-Other Associations: 아동, AI코칭, 리포트 |  |  |  |
 
 | Class Name: 앱사용정보 | ID: 06 |  | Type: Concrete, Domain |
 | :---- | :---- | :---- | :---- |
-| **Description:** 아동이 사용한 개별 앱의 사용 시간과 카테고리 정보를 나타낸다. |  |  | **Associated Use Case:** U\_04, U\_08 |
+| **Description:** 아동이 사용한 개별 앱의 사용 시간과 카테고리 정보를 나타낸다. |  |  | **Associated Use Case:** U\_04, U\_08 |
 | **Responsibilities:**  \-앱 사용시간 조회(): Int \- 앱 카테고리 확인() : String  |  | **Collaborations:** \-사용기록 |  |
 | **Attributes** \-앱 정보 ID : String \-앱 이름 : String \-카테고리: String \-사용시간: Int |  |  |  |
 | **Relationships** \-Generalization:  \-Aggregation: \-Other Associations: 사용기록 |  |  |  |
 
 | Class Name: 사용제한설정 | ID: 07 |  | Type: Concrete, Domain |
 | :---- | :---- | :---- | :---- |
-| **Description:** 보호자가 아동의 스마트폰 또는 특정 앱 사용을 제한하기 위해 설정한 정보를 나타낸다. |  |  | **Associated Use Case:** U\_05, U\_10  |
+| **Description:** 보호자가 아동의 스마트폰 또는 특정 앱 사용을 제한하기 위해 설정한 정보를 나타낸다. |  |  | **Associated Use Case:** U\_05, U\_10  |
 | **Responsibilities:**  \-제한설정() : void  \- 제한수정() : void  \- 제한해제() : void  \- 제한초과확인() : bool  |  | **Collaborations:** \-보호자 \-아동 \-알림 |  |
 | **Attributes** \-제한 ID : String \-제한앱 : String \-제한시간: Int \-시작시간: Int \-종료시간: Int \-활성여부: bool  |  |  |  |
 | **Relationships** \-Generalization:  \-Aggregation:  \-Other Associations: 보호자, 아동, 알림 |  |  |  |
 
 | Class Name: 미션 | ID: 08 |  | Type: Concrete, Domain |
 | :---- | :---- | :---- | :---- |
-| **Description:** 아동의 스마트폰 사용 습관 개선을 위해 제공되는 미션을 나타낸다. |  |  | **Associated Use Case:** U\_06, U\_07, U\_08, U\_10 |
+| **Description:** 아동의 스마트폰 사용 습관 개선을 위해 제공되는 미션을 나타낸다. |  |  | **Associated Use Case:** U\_06, U\_07, U\_08, U\_10 |
 | **Responsibilities:**  \- 미션생성() : void  \- 미션수정() : void  \- 미션삭제() : void  \- 미션완료처리() : void  |  | **Collaborations:** \-보호자 \-아동 \-AI코칭 \-미션수행기록 \-알림 |  |
 | **Attributes** \- 미션ID : String  \- 제목 : String  \- 내용 : String  \- 목표 : String  \- 시작일 : Int  \- 종료일 : Int  \- 생성방식 : String  \- 상태 : String  |  |  |  |
 | **Relationships** \-Generalization:  \-Aggregation: 미션수행기록 \-Other Associations: 보호자, 아동, AI코칭, 알림 |  |  |  |
 
 | Class Name: 미션수행기록 | ID: 09 |  | Type: Concrete, Domain |
 | :---- | :---- | :---- | :---- |
-| **Description:** 아동이 미션을 수행한 결과와 완료 여부를 저장하는 정보를 나타낸다. |  |  | **Associated Use Case:** U\_07, U\_09 |
+| **Description:** 아동이 미션을 수행한 결과와 완료 여부를 저장하는 정보를 나타낸다. |  |  | **Associated Use Case:** U\_07, U\_09 |
 | **Responsibilities:**  \- 수행상태저장() : void  \- 완료여부확인() : bool  \- 보호자확인처리() : void  |  | **Collaborations:** \-아동 \-미션 \-리포트 |  |
 | **Attributes** \- 수행기록ID : String  \- 수행일 : Int  \- 완료여부 : bool  \- 완료시간 : Int  \- 보호자확인여부 : bool  |  |  |  |
 | **Relationships** \-Generalization:  \-Aggregation:  \-Other Associations: 아동, 미션, 리포트 |  |  |  |
 
 | Class Name: AI코칭 | ID: 10 |  | Type: Concrete, Domain |
 | :---- | :---- | :---- | :---- |
-| **Description:** 아동의 스마트폰 사용 기록을 분석하여 맞춤형 코칭 결과와 추천 미션을 생성하는 정보를 나타낸다. |  |  | **Associated Use Case:** U\_08, U\_09 |
+| **Description:** 아동의 스마트폰 사용 기록을 분석하여 맞춤형 코칭 결과와 추천 미션을 생성하는 정보를 나타낸다. |  |  | **Associated Use Case:** U\_08, U\_09 |
 | **Responsibilities:**  \- 사용기록분석() : void  \- 코칭결과생성() : String  \- 추천미션생성() : 미션  |  | **Collaborations:** \-아동 \-사용기록 \-미션 \-리포트 |  |
 | **Attributes** \- 코칭ID : String  \- 분석일 : Int  \- 분석결과 : String  \- 추천내용 : String  \- 추천미션 : String  |  |  |  |
 | **Relationships** \-Generalization:  \-Aggregation:  \-Other Associations: 아동, 사용기록, 미션, 리포트 |  |  |  |
 
 | Class Name: 리포트 | ID: 11 |  | Type: Concrete, Domain |
 | :---- | :---- | :---- | :---- |
-| **Description:** 아동의 스마트폰 사용 현황, 사용 추이, 미션 수행 결과를 요약한 정보를 나타낸다. |  |  | **Associated Use Case:** U\_04, U\_09 |
+| **Description:** 아동의 스마트폰 사용 현황, 사용 추이, 미션 수행 결과를 요약한 정보를 나타낸다. |  |  | **Associated Use Case:** U\_04, U\_09 |
 | **Responsibilities:**  \- 리포트생성() : void  \- 사용추이분석() : void  \- 미션결과요약() : void  |  | **Collaborations:** \-아동 \-사용기록 \-미션수행기록 \-AI코칭 |  |
 | **Attributes** \- 리포트ID : String  -생성일 : Int  \- 기간 : String  \- 총사용시간 : Int  \- 미션완료율 : double \- 요약내용 : String  |  |  |  |
 | **Relationships** \-Generalization:  \-Aggregation: 사용기록, 미션수행기록 \-Other Associations: 아동, AI코칭 |  |  |  |
 
 | Class Name: 알림 | ID: 12 |  | Type: Concrete, Domain |
 | :---- | :---- | :---- | :---- |
-| **Description:** 미션, 사용 제한, 리포트, AI 코칭 결과와 관련하여 보호자 또는 아동에게 전달되는 메시지를 나타낸다. |  |  | **Associated Use Case:** U\_10, U\_11 |
+| **Description:** 미션, 사용 제한, 리포트, AI 코칭 결과와 관련하여 보호자 또는 아동에게 전달되는 메시지를 나타낸다. |  |  | **Associated Use Case:** U\_10, U\_11 |
 | **Responsibilities:**  \- 알림생성() : void  \- 알림전송() : void  \- 읽음처리() : void  |  | **Collaborations:** \-보호자 \-아동 \-미션 \-사용제한설정 \-리포트 \-AI코칭 |  |
 | **Attributes** \- 알림ID : String  \- 제목 : String  \- 내용 : String  \- 알림유형 : String  \- 전송시간 : Int  \- 읽음여부 : bool  |  |  |  |
 | **Relationships** \-Generalization:  \-Aggregation:  \-Other Associations: 보호자, 아동, 미션, 사용제한설정, 리포트,  AI코칭 |  |  |  |
@@ -366,43 +365,35 @@
 ## **3.3 동적 분석**
 
 3.3.1 회원가입을 한다  
-![][image3]
+![웰폰키즈 sequence Diagram](images/signup.png)
 
 3.3.2 로그인을 한다  
-![][image4]
+![웰폰키즈 sequence Diagram](images/login.png)
 
 3.3.3 아동 계정을 등록한다  
-![][image5]
+![웰폰키즈 sequence Diagram](images/kid-register.png)
 
 3.3.4 사용 리포트를 조회한다  
-![][image6]
+![웰폰키즈 sequence Diagram](images/report.png)
 
 3.3.5 사용 제한을 설정한다  
-![][image7]
+![웰폰키즈 sequence Diagram](images/limit-register.png)
 
 3.3.6 미션을 설정한다  
-![][image8]
+![웰폰키즈 sequence Diagram](images/mission-register.png)
 
 3.3.7 미션을 수행한다  
-![][image9]
+![웰폰키즈 sequence Diagram](images/do-mission.png)
 
 3.3.8 AI 코칭 결과를 조회한다  
-![][image10]
+![웰폰키즈 sequence Diagram](images/AI.png)
 
 3.3.9 알림을 확인한다  
-![][image11]
+![웰폰키즈 sequence Diagram](images/alarm.png)
 
 사진이 선명하지 않아 원본 링크를 함께 첨부합니다. [요구사항 분석서 다이어그램 모음](https://www.figma.com/board/ahhwIDRuI7a2NRphMgD7HR/%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B3%B5%ED%95%99-%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD-%EB%B6%84%EC%84%9D%EC%84%9C?node-id=0-1&t=Ulxaw51oHgBKYU6L-1)
 
-# 
 
-# 
-
-# 
-
-# 
-
-# 
 
 # **4\. 인터페이스 분석**
 
