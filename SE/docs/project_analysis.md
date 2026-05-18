@@ -280,74 +280,60 @@
 | **Attributes** \-아동 ID : String \-이름 : String \-나이: Int \-이메일: String \-비밀번호: String \-전화번호: String \-기기ID : String \-등록일: String  |  |  |  |
 | **Relationships** \-Generalization:  \-Aggregation: 사용기록, 미션수행기록 \-Other Associations: 보호자, 미션, 사용제한설정, AI코칭, 리포트, 알림 |  |  |  |
 
-| Class Name: 회원가입 | ID: 03 |  | Type: Concrete, Application |
-| :---- | :---- | :---- | :---- |
-| **Description:** 사용자가 서비스를 이용하기 위해 계정을 생성하는 과정을 나타낸다. |  |  | **Associated Use Case:** U\_01 |
-| **Responsibilities:**  \-회원 중복 확인(): bool |  | **Collaborations:** \-보호자 \-아동 |  |
-| **Attributes** \-아이디: String \-비밀번호: String \-이메일: String  |  |  |  |
-| **Relationships** \-Generalization:  \-Aggregation:  \-Other Associations: 사용자 |  |  |  |
-
-| Class Name: 로그인 | ID: 04 |  | Type: Concrete, Application |
-| :---- | :---- | :---- | :---- |
-| **Description:** 사용자가 서비스를 이용하기 위해 접속하는 과정을 나타낸다. |  |  | **Associated Use Case:** U\_02 |
-| **Responsibilities:**  \-로그인 정보 전송() : void \-로그인 정보 확인() : void |  | **Collaborations:** \-보호자 \-아동 |  |
-| **Attributes** \-아이디 : String \-비밀번호: String  |  |  |  |
-| **Relationships** \-Generalization:  \-Aggregation:  \-Other Associations: 사용자 |  |  |  |
-
 ## 
 
 ## 
 
-| Class Name: 사용기록 | ID: 05 |  | Type: Concrete, Domain |
+| Class Name: 사용기록 | ID: 03 |  | Type: Concrete, Domain |
 | :---- | :---- | :---- | :---- |
 | **Description:** 아동의 스마트폰 사용 시간과 앱별 사용 내역을 저장하는 정보를 나타낸다. |  |  | **Associated Use Case:** U\_04, U\_08, U\_09  |
 | **Responsibilities:**  \-사용시간계산(): Int \-앱별사용정보조회() : List\<앱 사용정보\> \-기록저장() : void  |  | **Collaborations:** \-아동 \-앱사용정보 \-AI코칭 \-리포트 |  |
 | **Attributes** \-기록 ID : String \-날짜: String \-총 사용시간: Int \-수집시간: String  |  |  |  |
 | **Relationships** \-Generalization:  \-Aggregation: 앱사용정보 \-Other Associations: 아동, AI코칭, 리포트 |  |  |  |
 
-| Class Name: 앱사용정보 | ID: 06 |  | Type: Concrete, Domain |
+| Class Name: 앱사용정보 | ID: 04 |  | Type: Concrete, Domain |
 | :---- | :---- | :---- | :---- |
 | **Description:** 아동이 사용한 개별 앱의 사용 시간과 카테고리 정보를 나타낸다. |  |  | **Associated Use Case:** U\_04, U\_08 |
 | **Responsibilities:**  \-앱 사용시간 조회(): Int \- 앱 카테고리 확인() : String  |  | **Collaborations:** \-사용기록 |  |
 | **Attributes** \-앱 정보 ID : String \-앱 이름 : String \-카테고리: String \-사용시간: Int |  |  |  |
 | **Relationships** \-Generalization:  \-Aggregation: \-Other Associations: 사용기록 |  |  |  |
 
-| Class Name: 사용제한설정 | ID: 07 |  | Type: Concrete, Domain |
+| Class Name: 사용제한설정 | ID: 05 |  | Type: Concrete, Domain |
 | :---- | :---- | :---- | :---- |
 | **Description:** 보호자가 아동의 스마트폰 또는 특정 앱 사용을 제한하기 위해 설정한 정보를 나타낸다. |  |  | **Associated Use Case:** U\_05, U\_10  |
 | **Responsibilities:**  \-제한설정() : void  \- 제한수정() : void  \- 제한해제() : void  \- 제한초과확인() : bool  |  | **Collaborations:** \-보호자 \-아동 \-알림 |  |
 | **Attributes** \-제한 ID : String \-제한앱 : String \-제한시간: Int \-시작시간: Int \-종료시간: Int \-활성여부: bool  |  |  |  |
 | **Relationships** \-Generalization:  \-Aggregation:  \-Other Associations: 보호자, 아동, 알림 |  |  |  |
 
-| Class Name: 미션 | ID: 08 |  | Type: Concrete, Domain |
+| Class Name: 미션 | ID: 06 |  | Type: Concrete, Domain |
 | :---- | :---- | :---- | :---- |
 | **Description:** 아동의 스마트폰 사용 습관 개선을 위해 제공되는 미션을 나타낸다. |  |  | **Associated Use Case:** U\_06, U\_07, U\_08, U\_10 |
 | **Responsibilities:**  \- 미션생성() : void  \- 미션수정() : void  \- 미션삭제() : void  \- 미션완료처리() : void  |  | **Collaborations:** \-보호자 \-아동 \-AI코칭 \-미션수행기록 \-알림 |  |
 | **Attributes** \- 미션ID : String  \- 제목 : String  \- 내용 : String  \- 목표 : String  \- 시작일 : Int  \- 종료일 : Int  \- 생성방식 : String  \- 상태 : String  |  |  |  |
 | **Relationships** \-Generalization:  \-Aggregation: 미션수행기록 \-Other Associations: 보호자, 아동, AI코칭, 알림 |  |  |  |
 
-| Class Name: 미션수행기록 | ID: 09 |  | Type: Concrete, Domain |
+| Class Name: 미션수행기록 | ID: 07 |  | Type: Concrete, Domain |
 | :---- | :---- | :---- | :---- |
 | **Description:** 아동이 미션을 수행한 결과와 완료 여부를 저장하는 정보를 나타낸다. |  |  | **Associated Use Case:** U\_07, U\_09 |
 | **Responsibilities:**  \- 수행상태저장() : void  \- 완료여부확인() : bool  \- 보호자확인처리() : void  |  | **Collaborations:** \-아동 \-미션 \-리포트 |  |
 | **Attributes** \- 수행기록ID : String  \- 수행일 : Int  \- 완료여부 : bool  \- 완료시간 : Int  \- 보호자확인여부 : bool  |  |  |  |
 | **Relationships** \-Generalization:  \-Aggregation:  \-Other Associations: 아동, 미션, 리포트 |  |  |  |
 
-| Class Name: AI코칭 | ID: 10 |  | Type: Concrete, Domain |
+| Class Name: AI코칭 | ID: 08 |  | Type: Concrete, Domain |
 | :---- | :---- | :---- | :---- |
 | **Description:** 아동의 스마트폰 사용 기록을 분석하여 맞춤형 코칭 결과와 추천 미션을 생성하는 정보를 나타낸다. |  |  | **Associated Use Case:** U\_08, U\_09 |
 | **Responsibilities:**  \- 사용기록분석() : void  \- 코칭결과생성() : String  \- 추천미션생성() : 미션  |  | **Collaborations:** \-아동 \-사용기록 \-미션 \-리포트 |  |
 | **Attributes** \- 코칭ID : String  \- 분석일 : Int  \- 분석결과 : String  \- 추천내용 : String  \- 추천미션 : String  |  |  |  |
 | **Relationships** \-Generalization:  \-Aggregation:  \-Other Associations: 아동, 사용기록, 미션, 리포트 |  |  |  |
 
-| Class Name: 리포트 | ID: 11 |  | Type: Concrete, Domain |
+| Class Name: 리포트 | ID: 09 |  | Type: Concrete, Domain |
 | :---- | :---- | :---- | :---- |
 | **Description:** 아동의 스마트폰 사용 현황, 사용 추이, 미션 수행 결과를 요약한 정보를 나타낸다. |  |  | **Associated Use Case:** U\_04, U\_09 |
 | **Responsibilities:**  \- 리포트생성() : void  \- 사용추이분석() : void  \- 미션결과요약() : void  |  | **Collaborations:** \-아동 \-사용기록 \-미션수행기록 \-AI코칭 |  |
 | **Attributes** \- 리포트ID : String  -생성일 : Int  \- 기간 : String  \- 총사용시간 : Int  \- 미션완료율 : double \- 요약내용 : String  |  |  |  |
 | **Relationships** \-Generalization:  \-Aggregation: 사용기록, 미션수행기록 \-Other Associations: 아동, AI코칭 |  |  |  |
 
-| Class Name: 알림 | ID: 12 |  | Type: Concrete, Domain |
+| Class Name: 알림 | ID: 10 |  | Type: Concrete, Domain |
 | :---- | :---- | :---- | :---- |
 | **Description:** 미션, 사용 제한, 리포트, AI 코칭 결과와 관련하여 보호자 또는 아동에게 전달되는 메시지를 나타낸다. |  |  | **Associated Use Case:** U\_10, U\_11 |
 | **Responsibilities:**  \- 알림생성() : void  \- 알림전송() : void  \- 읽음처리() : void  |  | **Collaborations:** \-보호자 \-아동 \-미션 \-사용제한설정 \-리포트 \-AI코칭 |  |
@@ -497,11 +483,14 @@
 |  | FR\_024 |  |  |  |  |  |  |  |  |  | O | O |
 |  | FR\_025 | O |  |  |  |  |  |  |  |  |  |  |
 |  | FR\_026 |  | O |  |  |  |  |  |  |  |  |  |
-|  | FR\_027 |  |  | O |  |  |  |  |  |  |  |  |
-|  | FR\_028 |  |  | O |  | O |  |  |  |  |  |  |
+|  | FR\_027 |  | O | O |  |  |  |  |  |  |  |  |
+|  | FR\_028 |  | O | O |  | O |  |  |  |  |  |  |
 |  | FR\_029 |  | O |  |  |  |  |  |  |  |  |  |
-|  | FR\_030 |  |  | O |  | O |  |  |  |  |  |  |
-|  | FR\_031 |  |  |  |  |  |  |  |  |  |  |  |
+|  | FR\_030 |  | O | O |  | O |  |  |  |  |  |  |
+|  | FR\_031 |  | O |  |  |  |  |  |  |  |  | O |
+
+대부분의 주요 기능은 로그인 후 이용 가능한 기능이므로 U_03~U_10은 U_02와 Include 관계를 가진다. 
+단, 추적표에서는 각 요구사항을 직접 수행하는 유스케이스를 중심으로 매핑하였다.
 
 # **7\. 참고문헌 및 부록**
 
