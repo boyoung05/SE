@@ -24,3 +24,7 @@ second commit
 ## 11주차 과제 (요구사항 분석서 작성)
 - **파일 위치**:
 `SE/docs/project_analysis.md`
+
+## 14주차 과제 (테스트 결과 보고서 작성)
+- **파일 위치**:
+`SE/docs/project_testResult.md`
